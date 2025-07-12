@@ -9,8 +9,8 @@ const projects = [
       'Landing page moderna y responsiva diseñada para captar la atención del usuario con animaciones sutiles. Desarrollada con React y Tailwind CSS.',
     image: 'https://via.placeholder.com/600x400?text=Landing+Page+Project',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-    liveDemo: 'https://tu-landing-demo.com',
-    github: 'https://github.com/tu-usuario/landing-page-repo',
+    liveDemo: '#',
+    github: '#',
   },
   {
     title: 'Aplicación de Gestión de Tareas',
@@ -18,8 +18,8 @@ const projects = [
       'Aplicación full-stack para organizar y gestionar tareas diarias. Incorpora autenticación de usuarios y una interfaz intuitiva con MERN Stack.',
     image: 'https://via.placeholder.com/600x400?text=Task+App+Project',
     technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Redux'],
-    liveDemo: 'https://tu-task-app-demo.com',
-    github: 'https://github.com/tu-usuario/task-app-repo',
+    liveDemo: '#',
+    github: '#',
   },
   {
     title: 'Portafolio Personal',
@@ -27,8 +27,8 @@ const projects = [
       'Este portafolio refleja mis habilidades en desarrollo frontend y diseño UI/UX, empleando React, Tailwind CSS y animaciones interactivas con Atropos.',
     image: 'https://via.placeholder.com/600x400?text=Portfolio+Project',
     technologies: ['React', 'Tailwind CSS', 'Atropos.js', 'Vite'],
-    liveDemo: 'https://tu-portafolio.com',
-    github: 'https://github.com/tu-usuario/portfolio-repo',
+    liveDemo: '#',
+    github: '#',
   },
   {
     title: 'E-commerce Sencillo',
@@ -36,8 +36,8 @@ const projects = [
       'Prototipo funcional de tienda online con carrito de compras y pagos simulados con Stripe. Enfocado en una experiencia de usuario fluida.',
     image: 'https://via.placeholder.com/600x400?text=E-commerce+Project',
     technologies: ['Next.js', 'Stripe (simulado)', 'Context API'],
-    liveDemo: 'https://tu-ecommerce-demo.com',
-    github: 'https://github.com/tu-usuario/ecommerce-repo',
+    liveDemo: '#',
+    github: '#',
   },
 ];
 

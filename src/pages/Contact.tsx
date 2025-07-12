@@ -96,13 +96,13 @@ export default function Contact() {
         <div className="mt-16 text-center">
           <p className="text-xl mb-4">También puedes encontrarme en:</p>
           <div className="flex justify-center gap-6">
-            <a href="https://linkedin.com/in/tu-perfil" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.linkedin.com/in/esteban-ricardo-2411b8303/" target="_blank" rel="noopener noreferrer">
               <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" className="h-10 w-10" />
             </a>
-            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/esteban225" target="_blank" rel="noopener noreferrer">
               <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" className="h-10 w-10" />
             </a>
-            <a href="mailto:tu.correo@example.com">
+            <a href="mailto:esteban.ricardo.dev.com">
               <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email" className="h-10 w-10" />
             </a>
           </div>
