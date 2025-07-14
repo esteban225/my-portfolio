@@ -50,7 +50,7 @@ export default function Navbar() {
               <HomeIcon
                 sx={{
                   fontSize: 32,
-                  color: colors.purpleMedium, // Color morado medio por defecto
+                  color: colors.black, // Color morado medio por defecto
                   transition:
                     "color 0.3s ease-in-out, transform 0.3s ease-in-out",
                   ".group:hover &": {
@@ -71,7 +71,7 @@ export default function Navbar() {
               <InfoOutlineIcon
                 sx={{
                   fontSize: 32,
-                  color: colors.purpleMedium,
+                  color: colors.black,
                   transition:
                     "color 0.3s ease-in-out, transform 0.3s ease-in-out",
                   ".group:hover &": {
@@ -92,7 +92,7 @@ export default function Navbar() {
               <CodeIcon
                 sx={{
                   fontSize: 32,
-                  color: colors.purpleMedium,
+                  color: colors.black,
                   transition:
                     "color 0.3s ease-in-out, transform 0.3s ease-in-out",
                   ".group:hover &": {
@@ -113,7 +113,7 @@ export default function Navbar() {
               <ContactPhoneIcon
                 sx={{
                   fontSize: 32,
-                  color: colors.purpleMedium,
+                  color: colors.black,
                   transition:
                     "color 0.3s ease-in-out, transform 0.3s ease-in-out",
                   ".group:hover &": {
