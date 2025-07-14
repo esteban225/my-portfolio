@@ -1,5 +1,3 @@
-import React from 'react'; // Es buena práctica importar React
-
 export default function SectionDivider() {
   const colors = {
     black: "#0D0D0D",
