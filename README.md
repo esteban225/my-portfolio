@@ -1,100 +1,128 @@
-# Portafolio Personal - Esteban David Ricardo Fuentes
+<!-- Banner animado personalizado -->
+![header](https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=0,2,2,5,30&height=250&section=header&text=Esteban%20David%20Ricardo%20Fuentes&fontSize=38&fontColor=fff&animation=fadeIn)
 
-¡Hola! 👋 Soy **Esteban David Ricardo Fuentes**, un **Desarrollador Full Stack** apasionado por construir soluciones web modernas, robustas y escalables. Este es el repositorio de mi portafolio personal, donde puedes explorar mis proyectos, conocer más sobre mis habilidades y contactarme.
+# 💼 Portafolio Personal – *Esteban David Ricardo Fuentes*
 
-## 🚀 Tecnologías Destacadas
-
-Como desarrollador Full Stack, trabajo con una variedad de tecnologías tanto en el frontend como en el backend, enfocándome en la calidad del código, la arquitectura limpia y las mejores prácticas.
-
-**Frontend:**
-
-* **React.js:** Para construir interfaces de usuario interactivas y eficientes.
-* **Tailwind CSS:** Para un desarrollo rápido y altamente personalizable de estilos.
-* **JavaScript (ES6+):** El lenguaje fundamental para la lógica del lado del cliente.
-* **HTML5 & CSS3:** Fundamentos del desarrollo web.
-
-**Backend:**
-
-* **Laravel (PHP):** Para construir APIs robustas y aplicaciones web con un ORM potente.
-* **Spring Boot (Java):** Para desarrollar microservicios y APIs escalables en un entorno empresarial.
-* **MySQL:** Sistema de gestión de bases de datos relacionales para almacenar y consultar datos eficientemente.
-
-**Otras Habilidades y Herramientas:**
-
-* **JWT & Authentication:** Implementación de sistemas de autenticación seguros basados en tokens.
-* **Git & GitHub:** Control de versiones y colaboración en equipo.
-* **Docker:** Contenedorización de aplicaciones para entornos de desarrollo y producción consistentes.
-* **Servicios Externos:** Integración con plataformas como Stripe (pagos) y Cloudinary (gestión de medios).
-
-## ✨ Paleta de Colores
-
-Mi portafolio utiliza una paleta de colores moderna y vibrante para una experiencia visual atractiva:
-
-* **Negro:** `#0D0D0D`
-* **Morado Vibrante:** `#A259FF`
-* **Morado Medio:** `#C084FC`
-* **Amarillo Suave:** `#FFE599`
-* **Azul Acento:** `#3B82F6`
-
-Estos colores se combinan para crear un diseño dinámico y profesional.
-
-## 🏗️ Estructura del Proyecto
-
-Este portafolio está construido con React. La estructura principal incluye:
-
-
-
-
-
-
-
-
-
-
-
-## 🚀 Cómo Ejecutar el Portafolio Localmente
-
-Para tener una copia local de este proyecto y ejecutarlo en tu máquina:
-
-1.  **Clona el repositorio:**
-    ```bash
-    git clone [https://github.com/tu-usuario/nombre-de-tu-repositorio.git](https://github.com/tu-usuario/nombre-de-tu-repositorio.git)
-    cd nombre-de-tu-repositorio
-    ```
-    *(Asegúrate de reemplazar `tu-usuario/nombre-de-tu-repositorio` con la URL real de tu repositorio de GitHub.)*
-
-2.  **Instala las dependencias:**
-    ```bash
-    npm install
-    # o si usas yarn
-    # yarn install
-    ```
-
-3.  **Inicia el servidor de desarrollo:**
-    ```bash
-    npm start
-    # o si usas yarn
-    # yarn start
-    ```
-    Esto abrirá el portafolio en tu navegador predeterminado en `http://localhost:3000`.
-
-## 🌐 Despliegue
-
-Este portafolio está diseñado para ser fácilmente desplegable en servicios de hosting como Vercel, Netlify, GitHub Pages, entre otros.
-
-## 📞 Contacto
-
-¡Me encantaría conectar contigo! Puedes encontrarme en:
-
-* **LinkedIn:** [linkedin.com/in/esteban-ricardo-fuentes](https://www.linkedin.com/in/tu-perfil-de-linkedin) *(Reemplaza con tu URL real de LinkedIn)*
-* **GitHub:** [github.com/tu-usuario](https://github.com/tu.usuario) *(Reemplaza con tu URL real de GitHub)*
-* **Correo Electrónico:** [tu.correo@example.com](mailto:tu.correo@example.com) *(Reemplaza con tu dirección de correo electrónico)*
-* **WhatsApp:** [+57 3XX XXX XXXX](https://wa.me/573XXXXXXXXX) *(Reemplaza con tu número de WhatsApp real y código de país)*
-
-## 📄 Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+[![Visits Badge](https://komarev.com/ghpvc/?username=esteban225&label=Visitas&color=3b82f6)](https://github.com/esteban225)
+[![GitHub followers](https://img.shields.io/github/followers/esteban225?style=social)](https://github.com/esteban225)
+[![Portfolio Deployed](https://img.shields.io/badge/Live%20Demo-Online-blue?logo=vercel)](https://esteban225.vercel.app)
+[![Tech Stack](https://img.shields.io/badge/Stack-Full%20Stack-green?logo=codeforces)]()
 
 ---
 
-Made with ❤️ by Esteban David Ricardo Fuentes
+¡Hola! 👋 Soy **Esteban David Ricardo Fuentes**, un **Desarrollador Full Stack** 💻 apasionado por crear soluciones web modernas, escalables y centradas en la experiencia del usuario.
+
+Este repositorio contiene el código fuente de mi portafolio personal, donde puedes:
+
+✨ Explorar mis proyectos  
+🛠️ Conocer mis habilidades técnicas  
+📬 ¡Y contactarme para trabajar juntos!
+
+---
+
+## 🚀 Tecnologías Principales
+
+### 🎨 Frontend
+
+- ⚛️ **React.js**
+- 🎯 **Tailwind CSS**
+- 💡 **JavaScript (ES6+)**
+- 🧱 **HTML5 & CSS3**
+
+### 🛠️ Backend
+
+- 🐘 **Laravel (PHP)**
+- ☕ **Spring Boot (Java)**
+- 🗄️ **MySQL**
+
+### 🧰 Herramientas Complementarias
+
+- 🔐 **JWT & Auth**
+- 🧠 **Git & GitHub**
+- 🐳 **Docker**
+- 🔗 **Stripe / Cloudinary / APIs externas**
+
+---
+
+## 🎨 Paleta de Colores
+
+| Color            | Hex       |
+|------------------|-----------|
+| ⚫ Negro profundo | `#0D0D0D` |
+| 🟣 Morado vivo    | `#A259FF` |
+| 💜 Morado medio   | `#C084FC` |
+| 💛 Amarillo suave | `#FFE599` |
+| 🔵 Azul acento    | `#3B82F6` |
+
+Colores vibrantes que reflejan energía, profesionalismo y modernidad ✨
+
+---
+
+## 🏗️ Estructura del Proyecto
+
+```
+.
+├── src/               # Componentes y páginas
+├── App.js             # Config principal
+├── app.json           # Metadatos
+├── package.json       # Dependencias y scripts
+└── README.md          # Este documento
+```
+
+---
+
+## 🧪 Cómo Ejecutarlo Localmente
+
+1. 📥 Clona el repositorio:
+```bash
+git clone https://github.com/esteban225/mi-portafolio.git
+cd mi-portafolio
+```
+
+2. 📦 Instala las dependencias:
+```bash
+npm install
+# o
+yarn install
+```
+
+3. ▶️ Inicia el proyecto:
+```bash
+npm start
+# o
+yarn start
+```
+
+Abre `http://localhost:3000` en tu navegador 🚀
+
+---
+
+## 🌐 Despliegue
+
+Este portafolio está optimizado para servicios como:
+
+- ▲ **Vercel**
+- 🌍 **Netlify**
+- 📁 **GitHub Pages**
+
+---
+
+## 📬 Contacto
+
+¿Te gustaría trabajar conmigo o simplemente decir hola? Aquí estoy 👇
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Esteban%20Ricardo-blue?logo=linkedin)](https://www.linkedin.com/in/esteban-ricardo-2411b8303/)
+[![GitHub](https://img.shields.io/badge/GitHub-esteban225-black?logo=github)](https://github.com/esteban225)
+[![Gmail](https://img.shields.io/badge/Gmail-esteban.ricardo.dev@gmail.com-red?logo=gmail)](mailto:esteban.ricardo.dev@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-Enviar%20mensaje-25D366?logo=whatsapp)](https://wa.me/573150528878)
+
+---
+
+## 📄 Licencia
+
+Distribuido bajo la licencia MIT. Consulta el archivo [`LICENSE`](LICENSE) para más detalles ✅
+
+---
+
+**Creado con ❤️ por Esteban David Ricardo Fuentes**  
+*Full Stack Developer | Siempre aprendiendo, siempre construyendo 🚀*
