@@ -7,106 +7,153 @@ export default function Contact() {
     message: '',
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
+  const [sent, setSent] = useState(false);
+
+  const colors = {
+    black: '#000000',
+    purpleVibrant: '#9929EA',
+    purpleMedium: '#CC66DA',
+    yellowSoft: '#FAEB92',
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    alert('¡Gracias por tu mensaje! Me pondré en contacto contigo pronto.');
-    setFormData({ name: '', email: '', message: '' });
+    try {
+      const res = await fetch('https://formspree.io/f/moqgprrq', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setSent(true);
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        alert('Hubo un problema. Intenta de nuevo.');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Error de red. Intenta más tarde.');
+    }
   };
 
   return (
     <section
       id="contact"
-      className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-hidden"
+      className="min-h-screen py-16 px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center relative overflow-hidden"
+      style={{
+        background: `linear-gradient(to bottom right, ${colors.black}, ${colors.purpleVibrant})`,
+        color: colors.yellowSoft,
+      }}
     >
-      {/* Fondo visual sutil */}
+      {/* Fondo decorativo SVG */}
       <div className="absolute inset-0 z-0 opacity-10">
         <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <circle cx="90" cy="10" r="15" fill="url(#blueGradientContact)" />
-          <rect x="10" y="80" width="20" height="20" rx="5" ry="5" fill="url(#purpleGradientContact)" />
-          <defs>
-            <linearGradient id="blueGradientContact" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3B82F6" />
-              <stop offset="100%" stopColor="#2563EB" />
-            </linearGradient>
-            <linearGradient id="purpleGradientContact" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#8B5CF6" />
-              <stop offset="100%" stopColor="#7C3AED" />
-            </linearGradient>
-          </defs>
+          <circle cx="90" cy="10" r="15" fill={colors.purpleMedium} />
+          <rect x="10" y="80" width="20" height="20" rx="5" ry="5" fill={colors.yellowSoft} />
         </svg>
       </div>
 
-      <div className="relative z-10 max-w-7xl w-full mx-auto text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 leading-tight text-blue-400">
+      <div className="relative z-10 max-w-4xl w-full mx-auto text-center">
+        <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 drop-shadow-lg" style={{ color: colors.yellowSoft }}>
           Hablemos de tu Próximo Proyecto
         </h2>
-        <p className="text-lg sm:text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-          ¿Tienes una idea en mente, un proyecto que necesita un toque de <strong>desarrollo full stack</strong> o simplemente quieres saludar? ¡No dudes en contactarme! Estoy emocionado por saber de ti.
+        <p className="text-lg sm:text-xl mb-10 max-w-2xl mx-auto text-white">
+          ¿Tienes una idea o proyecto que necesita un <strong>toque full stack</strong>? ¡Estoy listo para escucharte!
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="w-full max-w-xl mx-auto space-y-6 bg-gray-800 p-8 rounded-xl shadow-2xl border border-gray-700"
-        >
-          <input
-            type="text"
-            name="name"
-            placeholder="Tu Nombre Completo"
-            value={formData.name}
-            onChange={handleChange}
-            className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Tu Correo Electrónico"
-            value={formData.email}
-            onChange={handleChange}
-            className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Tu Mensaje o Consulta"
-            value={formData.message}
-            onChange={handleChange}
-            rows={6}
-            className="w-full p-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder-gray-400 resize-y"
-            required
-          ></textarea>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+        {sent ? (
+          <p className="text-green-400 text-lg font-semibold">¡Gracias por tu mensaje! Te responderé pronto.</p>
+        ) : (
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-xl mx-auto space-y-6 bg-opacity-20 p-8 rounded-xl shadow-xl border border-purple-500 backdrop-blur"
+            style={{ backgroundColor: colors.black }}
           >
-            Enviar Mensaje
-          </button>
-        </form>
+            <input
+              type="text"
+              name="name"
+              placeholder="Tu Nombre Completo"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-3 bg-transparent border border-purple-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-white placeholder-gray-400 transition duration-200"
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Tu Correo Electrónico"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-3 bg-transparent border border-purple-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-white placeholder-gray-400 transition duration-200"
+            />
+            <textarea
+              name="message"
+              placeholder="Tu Mensaje o Consulta"
+              value={formData.message}
+              onChange={handleChange}
+              rows={6}
+              required
+              className="w-full p-3 bg-transparent border border-purple-500 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 text-white placeholder-gray-400 resize-y transition duration-200"
+            ></textarea>
 
-        {/* Redes sociales */}
+            <button
+              type="submit"
+              className="w-full bg-gradient-to-r from-[#CC66DA] to-[#9929EA] text-white font-bold py-3 rounded-lg hover:scale-105 transition transform duration-300 shadow-lg"
+            >
+              Enviar Mensaje
+            </button>
+          </form>
+        )}
+
+        {/* Redes sociales con animación */}
         <div className="mt-16 text-center">
-          <p className="text-xl mb-4">También puedes encontrarme en:</p>
+          <p className="text-xl mb-4 text-white">También puedes encontrarme en:</p>
           <div className="flex justify-center gap-6">
-            <a href="https://www.linkedin.com/in/esteban-ricardo-2411b8303/" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn" className="h-10 w-10" />
+            <a
+              href="https://www.linkedin.com/in/esteban-ricardo-2411b8303/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition transform hover:scale-110"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png"
+                alt="LinkedIn"
+                className="h-10 w-10"
+              />
             </a>
-            <a href="https://github.com/esteban225" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub" className="h-10 w-10" />
+            <a
+              href="https://github.com/esteban225"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition transform hover:scale-110"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/github.png"
+                alt="GitHub"
+                className="h-10 w-10"
+              />
             </a>
-            <a href="mailto:esteban.ricardo.dev.com">
-              <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="Email" className="h-10 w-10" />
+            <a
+              href="mailto:esteban.ricardo.dev@gmail.com"
+              className="transition transform hover:scale-110"
+            >
+              <img
+                src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png"
+                alt="Email"
+                className="h-10 w-10"
+              />
             </a>
           </div>
-          <p className="mt-8 text-md text-gray-400">
+          <p className="mt-8 text-md text-gray-300">
             Prefiero comunicarme por correo electrónico o LinkedIn.
           </p>
         </div>
