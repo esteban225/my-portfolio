@@ -14,7 +14,7 @@ export default function Navbar() {
 
   // --- Definición de colores de la paleta para facilitar su uso ---
   const colors = {
-    black: '#000000',
+    black: '#0D0D0D',
     purpleVibrant: '#9929EA',
     purpleMedium: '#CC66DA',
     yellowSoft: '#FAEB92',
