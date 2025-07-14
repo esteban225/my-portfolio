@@ -1,9 +1,8 @@
 import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import HomeIcon from "@mui/icons-material/Home";
-import InfoOutlineIcon from "@mui/icons-material/InfoOutline";
-import CodeIcon from "@mui/icons-material/Code";
-import ContactPhoneIcon from "@mui/icons-material/ContactPhone";
+// Usaremos iconos de react-icons para mayor flexibilidad y estilo moderno
+// Asegúrate de instalarlos si aún no lo has hecho: npm install react-icons
+import { FiMenu, FiX } from "react-icons/fi"; // Mantener estos para el menú hamburguesa
+import { FaHome, FaUser, FaLaptopCode, FaEnvelope } from "react-icons/fa"; // Nuevos iconos de React Icons
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,20 +11,20 @@ export default function Navbar() {
     setIsOpen(!isOpen);
   };
 
-  // --- Definición de colores de la paleta para facilitar su uso ---
+  // --- Definición de colores de la paleta ---
   const colors = {
     black: '#0D0D0D',
-    purpleVibrant: '#9929EA',
-    purpleMedium: '#CC66DA',
-    yellowSoft: '#FAEB92',
+    purpleVibrant: '#A259FF', // Ajusté este morado para que sea el mismo de tus otras secciones
+    purpleMedium: '#C084FC', // Ajusté este morado también
+    yellowSoft: '#FFE599',   // Ajusté este amarillo también
+    blueAccent: '#3B82F6',   // Añadido tu nuevo color azul
   };
 
   return (
-    <nav 
-      // Usamos style para el background-image con el gradiente personalizado
-      // Y clases de Tailwind para sombra y z-index
+    <nav
       className="fixed top-0 w-full shadow-xl z-50 text-white"
       style={{
+        // ¡Usamos tu nuevo degradado coherente con Hero!
         background: `linear-gradient(to right, ${colors.black}, ${colors.purpleVibrant})`
       }}
     >
@@ -33,8 +32,11 @@ export default function Navbar() {
         {/* Logo o Nombre del Portafolio */}
         <a
           href="#hero"
-          className="text-2xl font-bold tracking-wider transition-colors duration-300"
-          style={{ color: colors.yellowSoft, textShadow: `0 0 8px ${colors.purpleVibrant}` }} // Color amarillo para el texto del logo, con sombra para Pop!
+          className="text-2xl font-bold tracking-wider transition-colors duration-300 transform hover:scale-105 active:scale-95" // Añadimos transformaciones al click/hover
+          style={{
+            color: colors.yellowSoft,
+            textShadow: `0 0 10px ${colors.purpleVibrant}, 0 0 20px rgba(162, 89, 255, 0.4)` // Sombra más pronunciada para el pop
+          }}
         >
           Esteban.dev
         </a>
@@ -44,84 +46,81 @@ export default function Navbar() {
           <li>
             <a
               href="#hero"
-              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#9929EA]"
+              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{ ['--tw-ring-color' as string]: colors.yellowSoft, ['--tw-ring-offset-color' as string]: colors.black }} // Anillo amarillo, offset negro
               aria-label="Ir a la sección de Inicio"
             >
-              <HomeIcon
-                sx={{
-                  fontSize: 32,
-                  color: colors.black, // Color morado medio por defecto
-                  transition:
-                    "color 0.3s ease-in-out, transform 0.3s ease-in-out",
-                  ".group:hover &": {
-                    color: colors.yellowSoft, // Amarillo suave al hacer hover
-                    transform: "scale(1.1)",
-                  },
+              <FaHome // Nuevo icono de inicio
+                className="text-3xl transition-all duration-300" // Tamaño con Tailwind, transiciones
+                style={{
+                  color: colors.purpleMedium, // Color morado medio por defecto
+                  filter: `drop-shadow(0 0 2px ${colors.black})`, // Pequeña sombra para el icono
                 }}
               />
+              <span
+                className="ml-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 text-sm font-semibold"
+                style={{ color: colors.yellowSoft }} // Texto del hover en amarillo suave
+              >Inicio</span>
             </a>
           </li>
           <li>
             <a
               href="#about"
-              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2"
-              style={{ ['--tw-ring-color' as string]: colors.purpleVibrant }}
+              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{ ['--tw-ring-color' as string]: colors.yellowSoft, ['--tw-ring-offset-color' as string]: colors.black }}
               aria-label="Ir a la sección Sobre Mí"
             >
-              <InfoOutlineIcon
-                sx={{
-                  fontSize: 32,
-                  color: colors.black,
-                  transition:
-                    "color 0.3s ease-in-out, transform 0.3s ease-in-out",
-                  ".group:hover &": {
-                    color: colors.yellowSoft,
-                    transform: "scale(1.1)",
-                  },
+              <FaUser // Nuevo icono de usuario
+                className="text-3xl transition-all duration-300"
+                style={{
+                  color: colors.purpleMedium,
+                  filter: `drop-shadow(0 0 2px ${colors.black})`,
                 }}
               />
+              <span
+                className="ml-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 text-sm font-semibold"
+                style={{ color: colors.yellowSoft }}
+              >Sobre Mí</span>
             </a>
           </li>
           <li>
             <a
               href="#projects"
-              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2"
-              style={{['--tw-ring-color' as string]: colors.purpleVibrant }}
+              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{ ['--tw-ring-color' as string]: colors.yellowSoft, ['--tw-ring-offset-color' as string]: colors.black }}
               aria-label="Ir a la sección de Proyectos"
             >
-              <CodeIcon
-                sx={{
-                  fontSize: 32,
-                  color: colors.black,
-                  transition:
-                    "color 0.3s ease-in-out, transform 0.3s ease-in-out",
-                  ".group:hover &": {
-                    color: colors.yellowSoft,
-                    transform: "scale(1.1)",
-                  },
+              <FaLaptopCode // Nuevo icono de código/proyectos
+                className="text-3xl transition-all duration-300"
+                style={{
+                  color: colors.purpleMedium,
+                  filter: `drop-shadow(0 0 2px ${colors.black})`,
                 }}
               />
+              <span
+                className="ml-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 text-sm font-semibold"
+                style={{ color: colors.yellowSoft }}
+              >Proyectos</span>
             </a>
           </li>
           <li>
             <a
               href="#contact"
-              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2"
-              style={{ ['--tw-ring-color' as string]: colors.purpleVibrant }}
+              className="group flex items-center p-2 rounded-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2"
+              style={{ ['--tw-ring-color' as string]: colors.yellowSoft, ['--tw-ring-offset-color' as string]: colors.black }}
               aria-label="Ir a la sección de Contacto"
             >
-              <ContactPhoneIcon
-                sx={{
-                  fontSize: 32,
-                  color: colors.black,
-                  transition:
-                    "color 0.3s ease-in-out, transform 0.3s ease-in-out",
-                  ".group:hover &": {
-                    color: colors.yellowSoft,
-                    transform: "scale(1.1)",
-                  },
+              <FaEnvelope // Nuevo icono de contacto (sobre)
+                className="text-3xl transition-all duration-300"
+                style={{
+                  color: colors.purpleMedium,
+                  filter: `drop-shadow(0 0 2px ${colors.black})`,
                 }}
               />
+              <span
+                className="ml-2 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-300 text-sm font-semibold"
+                style={{ color: colors.yellowSoft }}
+              >Contacto</span>
             </a>
           </li>
         </ul>
@@ -130,13 +129,13 @@ export default function Navbar() {
         <div className="md:hidden">
           <button
             onClick={toggleMenu}
-            className="focus:outline-none"
-            style={{ color: colors.yellowSoft }} // Color amarillo para el icono de hamburguesa
+            className="focus:outline-none p-2 rounded-lg transition-colors duration-300 active:scale-90"
+            style={{ color: colors.yellowSoft }}
           >
             {isOpen ? (
-              <FiX className="h-7 w-7" />
+              <FiX className="h-7 w-7 transform rotate-90 transition-transform duration-300" />
             ) : (
-              <FiMenu className="h-7 w-7" />
+              <FiMenu className="h-7 w-7 transition-transform duration-300" />
             )}
           </button>
         </div>
@@ -144,16 +143,16 @@ export default function Navbar() {
 
       {/* Menú desplegable para móviles */}
       <div
-        className={`md:hidden ${isOpen ? "block" : "hidden"} pb-4`}
-        style={{ background: colors.black }} // Fondo negro sólido para el menú móvil
+        className={`md:hidden ${isOpen ? "block" : "hidden"} pb-4 transition-all duration-300 ease-in-out transform ${isOpen ? 'translate-y-0 opacity-100' : '-translate-y-4 opacity-0'}`}
+        style={{ background: colors.black }}
       >
-        <ul className="flex flex-col items-center space-y-4 text-lg font-medium">
+        <ul className="flex flex-col items-center space-y-4 text-lg font-medium py-2">
           <li>
             <a
               href="#hero"
               onClick={toggleMenu}
-              className="block py-2 transition-colors duration-300 hover:text-[#9929EA]"
-              style={{ color: colors.yellowSoft }} // Texto amarillo
+              className="block py-2 px-4 rounded-md transition-colors duration-300 text-center hover:bg-opacity-20 transform hover:scale-105"
+              style={{ color: colors.yellowSoft, backgroundColor: colors.purpleVibrant }} // Utilizar el color del hover aquí
             >
               Inicio
             </a>
@@ -162,8 +161,8 @@ export default function Navbar() {
             <a
               href="#about"
               onClick={toggleMenu}
-              className="block py-2 transition-colors duration-300 hover:text-[#9929EA]"
-              style={{ color: colors.yellowSoft }}
+              className="block py-2 px-4 rounded-md transition-colors duration-300 text-center hover:bg-opacity-20 transform hover:scale-105"
+              style={{ color: colors.yellowSoft, ['--tw-bg-opacity' as string]: '0', backgroundColor: colors.purpleVibrant }}
             >
               Sobre mí
             </a>
@@ -172,8 +171,8 @@ export default function Navbar() {
             <a
               href="#projects"
               onClick={toggleMenu}
-              className="block py-2 transition-colors duration-300 hover:text-[#9929EA]"
-              style={{ color: colors.yellowSoft }}
+              className="block py-2 px-4 rounded-md transition-colors duration-300 text-center hover:bg-opacity-20 transform hover:scale-105"
+              style={{ color: colors.yellowSoft, ['--tw-bg-opacity' as string]: '0', backgroundColor: colors.purpleVibrant }}
             >
               Proyectos
             </a>
@@ -182,8 +181,8 @@ export default function Navbar() {
             <a
               href="#contact"
               onClick={toggleMenu}
-              className="block py-2 transition-colors duration-300 hover:text-[#9929EA]"
-              style={{ color: colors.yellowSoft }}
+              className="block py-2 px-4 rounded-md transition-colors duration-300 text-center hover:bg-opacity-20 transform hover:scale-105"
+              style={{ color: colors.yellowSoft, ['--tw-bg-opacity' as string]: '0', backgroundColor: colors.purpleVibrant }}
             >
               Contacto
             </a>
