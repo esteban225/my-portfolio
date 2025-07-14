@@ -43,8 +43,11 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="min-h-screen bg-gradient-to-br from-gray-900 to-black text-white py-16 px-4 sm:px-6 lg:px-8">
-      <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-blue-400">
+    <section
+      id="projects"
+      className="min-h-screen bg-gradient-to-br from-black via-[#18001a] to-[#32005c] text-white py-16 px-4 sm:px-6 lg:px-8"
+    >
+      <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-cyan-400 drop-shadow-lg">
         Mis Proyectos Destacados
       </h2>
 
@@ -52,39 +55,52 @@ export default function Projects() {
         {projects.map((project, index) => (
           <Atropos
             key={index}
-            className="bg-gray-800 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out cursor-pointer overflow-hidden"
+            className="bg-[#1e1e2f] rounded-2xl shadow-2xl hover:shadow-purple-700/60 transition-all duration-300 ease-in-out cursor-pointer overflow-hidden"
             rotateXMax={10}
             rotateYMax={10}
             shadow
-            highlight={false}
+            highlight
           >
             <div className="p-6 flex flex-col h-full">
               {/* Imagen del proyecto */}
-              <div className="w-full h-48 bg-gray-700 rounded-lg mb-4 overflow-hidden relative" data-atropos-offset="5">
+              <div
+                className="w-full h-48 rounded-lg mb-4 overflow-hidden relative group"
+                data-atropos-offset="5"
+              >
                 <img
                   src={project.image}
                   alt={`Captura de ${project.title}`}
-                  className="w-full h-full object-cover rounded-lg transition-transform duration-300 ease-in-out"
+                  className="w-full h-full object-cover rounded-lg transition-transform duration-500 ease-in-out group-hover:scale-105 group-hover:blur-[1px]"
                 />
                 <div className="absolute inset-0 bg-black opacity-10"></div>
               </div>
 
               {/* Título */}
-              <h3 className="text-2xl font-bold mb-3 text-blue-400" data-atropos-offset="2">
+              <h3
+                className="text-2xl font-bold mb-3 text-cyan-300"
+                data-atropos-offset="2"
+                style={{ textShadow: '1px 1px 4px rgba(0,0,0,0.6)' }}
+              >
                 {project.title}
               </h3>
 
               {/* Descripción */}
-              <p className="text-gray-300 text-base mb-4 flex-grow" data-atropos-offset="0">
+              <p
+                className="text-gray-300 text-base mb-4 flex-grow"
+                data-atropos-offset="0"
+              >
                 {project.description}
               </p>
 
               {/* Tecnologías */}
-              <div className="flex flex-wrap gap-2 mb-4" data-atropos-offset="-1">
+              <div
+                className="flex flex-wrap gap-2 mb-4"
+                data-atropos-offset="-1"
+              >
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="bg-blue-600/20 text-blue-200 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500"
+                    className="bg-gradient-to-br from-purple-700 to-cyan-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md hover:scale-105 transition-transform duration-200"
                   >
                     {tech}
                   </span>
@@ -92,13 +108,16 @@ export default function Projects() {
               </div>
 
               {/* Enlaces */}
-              <div className="flex justify-start gap-4 mt-auto" data-atropos-offset="-2">
+              <div
+                className="flex justify-start gap-4 mt-auto"
+                data-atropos-offset="-2"
+              >
                 {project.liveDemo && (
                   <a
                     href={project.liveDemo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition duration-300 text-sm font-semibold shadow-lg"
+                    className="flex items-center gap-2 bg-purple-600 text-white px-5 py-2 rounded-full hover:bg-purple-700 transition duration-300 text-sm font-semibold shadow-md hover:scale-105"
                   >
                     <FaExternalLinkAlt /> Ver Demo
                   </a>
@@ -108,7 +127,7 @@ export default function Projects() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 bg-gray-700 text-gray-200 px-5 py-2 rounded-full hover:bg-gray-600 transition duration-300 text-sm font-semibold shadow-lg"
+                    className="flex items-center gap-2 bg-gray-800 text-gray-200 px-5 py-2 rounded-full hover:bg-gray-700 transition duration-300 text-sm font-semibold shadow-md hover:scale-105"
                   >
                     <FaGithub /> Código
                   </a>
