@@ -48,7 +48,7 @@ export default function Projects() {
       className="min-h-screen bg-gradient-to-br from-black via-[#18001a] to-[#32005c] text-white py-16 px-4 sm:px-6 lg:px-8"
     >
       <h2 className="text-4xl sm:text-5xl font-extrabold text-center mb-12 text-cyan-400 drop-shadow-lg">
-        Mis Proyectos Destacados
+        Mis Proyectos
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
